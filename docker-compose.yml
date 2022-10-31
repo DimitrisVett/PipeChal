@@ -3,5 +3,8 @@ services:
   tests:
     build:
       context: .
-      cmd: ['npm', 'run', 'test']
+      volumes:
+      - /app/node_modules
+      - .:/app
+      command: ['npm', 'run', 'test']
   
