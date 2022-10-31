@@ -17,7 +17,7 @@ jobs:
     - name: Login to DockerHub
       run: docker login -u ${{ secrets.DOCKERHUB_ID }} -p ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build the Docker image
-      run: docker build -t cgi
+      run: docker build -t cgi .
     - name: Run container with STDIN + test
       run: docker run -i cgi  
       # The above thing does not work. 
