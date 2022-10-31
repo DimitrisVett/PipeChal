@@ -21,7 +21,7 @@ jobs:
     - name: Run container with STDIN + test
       run: |
         docker run -i cgi-cha
-        npm test
+      # The above thing does not work. 
       # Probably would be better to have docker compose
       #     - name: Run tests
       #       run: docker run 
