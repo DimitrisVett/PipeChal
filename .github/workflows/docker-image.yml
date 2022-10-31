@@ -20,19 +20,16 @@ jobs:
       run: docker build -t cgi .
     - name: Run container with STDIN + test
       run: docker run -i cgi  
-      # The above thing does not work. 
-      # Probably would be better to have docker compose
-      #     - name: Run tests
-      #       run: docker run 
   
-      #Test
-      #   runs-on: ubuntu-latest
-      #     if: github.event_name != 'schedule'
-      #     steps:
-      #       - uses: actions/checkout@v2
-      #       - run: |
-      #           docker-compose --file docker-compose.test.yml build
-      #           #docker-compose --file docker-compose.test.yml run sut
+  
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: docker-compose --file docker-compose.yml build
+  
+    
+
   
   Deploy-Preview:
     #needs Test
