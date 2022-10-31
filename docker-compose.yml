@@ -3,5 +3,5 @@ services:
   tests:
     build:
       context: .
-      command: ['npm', 'run', 'test']
+      cmd: ['npm', 'run', 'test']
   
